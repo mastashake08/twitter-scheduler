@@ -41,9 +41,9 @@ class TweetController extends Controller
           'content' => $request->content,
           'publish_timestamp' => \Carbon\Carbon::parse($request->publish_timestamp)
         ]);
-        
+
         //Add tweet to the queue
-        ProcessTweet::dispatch($tweet)->delay(\Carbon\Carbon::parse($request->publish_timestamp));
+        ProcessTweet::dispatch($tweet)->delay(\Carbon\Carbon::parse($request->publish_timestamp)->diffInSeconds(\Carbon\Carbon::now()));
 
         //return json
         return response()->json($tweet);
