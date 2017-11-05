@@ -30,3 +30,13 @@ stream.on('follow',function(data){
 })
 
 });
+
+var filter = T.stream('statuses/filter',{track: ['#30days30sites','#100DaysOfCode','#301DaysOfCode','#Webapp','#laravel','#vuejs']});
+filter.on('tweet',function(tweet){
+
+
+  T.post('favorites/create', { id: tweet.id_str },function(data){
+    console.log(data);
+  });
+
+});
