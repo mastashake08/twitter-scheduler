@@ -7,7 +7,7 @@
 
                     <div class="panel-body">
                       <div class="form-group">
-                      <input class="form-control" placeholder="Content" v-model="newTweet.content">
+                      <input maxlength="140" autofocus class="form-control" placeholder="Content" v-model="newTweet.content">
                       </div>
                       <div class="form-group">
                       <input class="form-control" type="datetime-local" placeholder="Description" v-model="newTweet.publish_timestamp">
