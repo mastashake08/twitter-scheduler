@@ -83,11 +83,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://jyroneparker.com">More Tutorials</a>
-                    <a href="https://twitter.com/mastashake08">Twitter</a>
-                    <a href="https://instagram.com/mastashake08">Instagram</a>
-                    <a href="https://youtube.com/c/jyroneparker">YouTube</a>
-                    <a href="https://github.com/mastashake08">GitHub</a>
+                    <a href="https://jyroneparker.com" target="_blank">More Tutorials</a>
+                    <a href="https://twitter.com/mastashake08" target="_blank">Twitter</a>
+                    <a href="https://instagram.com/mastashake08" target="_blank">Instagram</a>
+                    <a href="https://youtube.com/c/jyroneparker" target="_blank">YouTube</a>
+                    <a href="https://github.com/mastashake08" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
