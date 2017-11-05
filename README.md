@@ -7,5 +7,6 @@ It allows you to schedule your tweets in the future as well as set up auto DM me
 #How To Run
 * Run composer install
 * Run npm install
+* cp .env.example to .env and fill out Twitter creds
 * Run node twitter.js
 * Run Laravel queues.
