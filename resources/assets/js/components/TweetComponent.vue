@@ -66,6 +66,7 @@
 <script>
 export default {
     mounted() {
+
         console.log('Component mounted.')
     },
     data(){
@@ -83,6 +84,16 @@ export default {
       }
     },
     created(){
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/background.js').then(function(registration) {
+
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }      
       this.$http.get('/api/tweet').then(function(data){
         this.tweets = data.data;
         this.ready = true;
