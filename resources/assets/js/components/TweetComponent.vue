@@ -7,7 +7,7 @@
 
                     <div class="panel-body">
                       <div class="form-group">
-                      <input maxlength="140" autofocus class="form-control" placeholder="Content" v-model="newTweet.content">
+                      <input maxlength="280" autofocus class="form-control" placeholder="Content" v-model="newTweet.content">
                       </div>
                       <div class="form-group">
                       <input class="form-control" type="datetime-local" placeholder="Description" v-model="newTweet.publish_timestamp">
@@ -93,20 +93,20 @@ export default {
             console.log('ServiceWorker registration failed: ', err);
           });
         });
-      }      
-      this.$http.get('/api/tweet').then(function(data){
+      }
+      axios.get('/api/tweet').then(function(data){
         this.tweets = data.data;
         this.ready = true;
       });
     },
   methods: {
     addTweet: function(tweet){
-      this.$http.post('/api/tweet',tweet).then(function(data){
+      axios.post('/api/tweet',tweet).then(function(data){
         this.tweets.unshift({content:tweet.content,publish_timestamp:tweet.publish_timestamp});
       });
     },
     editTweet: function(tweet){
-      this.$http.put('/api/tweet/'+tweet.id,this.selectedTweet).then(function(data){
+      axios.put('/api/tweet/'+tweet.id,this.selectedTweet).then(function(data){
         let index = this.tweets.indexOf(tweet);
         this.tweets[index] = tweet;
         alert('Updated!');
@@ -120,7 +120,7 @@ export default {
 
     },
     deleteTweet: function(tweet){
-      this.$http.delete('/api/tweet/'+tweet.id).then(function(data){
+      axios.delete('/api/tweet/'+tweet.id).then(function(data){
         let index = this.tweets.indexOf(tweet)
         this.tweets.splice(index, 1);
       });
