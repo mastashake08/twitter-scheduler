@@ -71,7 +71,7 @@ export default {
     },
     data(){
       return {
-        tweets: {},
+        tweets: [],
         newTweet:{
           'content': '',
           'publish_timestamp': ''
@@ -101,14 +101,16 @@ export default {
     },
   methods: {
     addTweet: function(tweet){
+      var that = this;
       axios.post('/api/tweet',tweet).then(function(data){
-        this.tweets.unshift({content:tweet.content,publish_timestamp:tweet.publish_timestamp});
+        that.tweets.unshift({content:tweet.content,publish_timestamp:tweet.publish_timestamp});
       });
     },
     editTweet: function(tweet){
-      axios.put('/api/tweet/'+tweet.id,this.selectedTweet).then(function(data){
-        let index = this.tweets.indexOf(tweet);
-        this.tweets[index] = tweet;
+      var that = this;
+      axios.put('/api/tweet/'+tweet.id,that.selectedTweet).then(function(data){
+        let index = that.tweets.indexOf(tweet);
+        that.tweets[index] = tweet;
         alert('Updated!');
         $("#editModal").modal('hide');
       });
@@ -120,9 +122,10 @@ export default {
 
     },
     deleteTweet: function(tweet){
+      var that = this;
       axios.delete('/api/tweet/'+tweet.id).then(function(data){
-        let index = this.tweets.indexOf(tweet)
-        this.tweets.splice(index, 1);
+        let index = that.tweets.indexOf(tweet)
+        that.tweets.splice(index, 1);
       });
 
     }
