@@ -23,7 +23,7 @@ stream.on('follow',function(data){
         "recipient_id": data.source.id
       },
       "message_data": {
-        "text": "Thanks for the follow! Be sure to check out my blog https://jyroneparker.com",
+        "text": "Thanks for the follow! Be sure to check out my blog https://jyroneparker.com I have many code tutorials and entrepreneur pieces! Also please subscribe to my Youtube channel and tune in to my live streams https://youtube.com/c/jyroneparker",
       }
     }
   }
@@ -31,7 +31,7 @@ stream.on('follow',function(data){
 
 });
 
-var filter = T.stream('statuses/filter',{track: ['#30days30sites','#100DaysOfCode','#301DaysOfCode','#Webapp','#laravel','#vuejs']});
+var filter = T.stream('statuses/filter',{track: ['#30days30sites','#100DaysOfCode','#301DaysOfCode','#Webapp','#laravel','#vuejs','#techtalk','php','vue','tech talk']});
 filter.on('tweet',function(tweet){
 
 
