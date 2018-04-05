@@ -94,9 +94,10 @@ export default {
           });
         });
       }
+      var that = this;
       axios.get('/api/tweet').then(function(data){
-        this.tweets = data.data;
-        this.ready = true;
+        that.tweets = data.data;
+        that.ready = true;
       });
     },
   methods: {
