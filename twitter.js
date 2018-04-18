@@ -31,7 +31,9 @@ stream.on('follow',function(data){
 
 });
 
-var filter = T.stream('statuses/filter',{track: ['#30days30sites','#100DaysOfCode','#301DaysOfCode','#Webapp','#laravel','#vuejs','#techtalk','php','vue','tech talk']});
+var filter = T.stream('statuses/filter',{track: ['#30days30sites','#100DaysOfCode','#301DaysOfCode','#Webapp','#laravel','#vuejs','#techtalk','php','vuejs','vue.js','tech talk', '#php', 'c++', 'java', 'android', 'ios', 'objective-c', 'python', 'django',
+'raspberry pi', 'programming', 'computer science', 'wep app', 'mobile app', 'nativescript','angularjs','react.js','reactjs',
+'angular.js','webrtc', 'cryptocurrency', '#neo', '#rpx', 'ICO', '#ico', 'nep-5']});
 filter.on('tweet',function(tweet){
 
 
